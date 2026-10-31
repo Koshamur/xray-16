@@ -16,7 +16,7 @@
 
 Для сборки OpenXRay в системе должны быть установлены следующие пакеты
 
-git gcc cmake libglvnd libjpeg6-turbo ncurses glew sdl2 openal crypto++ freeimage libogg libtheora libvorbis lzo lzop libjpeg-turbo
+`git gcc cmake libglvnd libjpeg6-turbo ncurses glew sdl2 openal crypto++ freeimage libogg libtheora libvorbis lzo lzop libjpeg-turbo`
 
 NOTE: На текущий момент поддерживаются только компиляторы GCC8, GCC9, GCC10
 
@@ -35,10 +35,10 @@ NOTE: Для задействования всех ядер процессора
 
 -DCMAKE_BUILD_TYPE=Release
 
-  Release - Релиз (значение по умолчанию, рекомендуется для игроков)
-  Debug - Отладка
-  Mixed - Смешанная
-  RelWithDebInfo - Релиз с отладочными символами
+Release - Релиз (значение по умолчанию, рекомендуется для игроков)  
+Debug - Отладка
+Mixed - Смешанная
+RelWithDebInfo - Релиз с отладочными символами
 
 Каталог установки -DCMAKE_INSTALL_PREFIX=/usr
 
@@ -46,24 +46,25 @@ NOTE: Обязательный параметр рекомендуемое зн�
 
 Каталог расположения библиотек. -DCMAKE_INSTALL_LIBDIR=lib
 
-    lib Большинство дистрибутивов (Значение по умолчанию)
-    lib64 Дистрибутивы с разделённой структурой каталогов (Fedora, CentOS, Slakware...)
+  lib Большинство дистрибутивов (Значение по умолчанию)
+  lib64 Дистрибутивы с разделённой структурой каталогов (Fedora, CentOS, Slakware...)
 
 NOTE: Определяется автоматически, как правило INSTALL_PREFIX/lib
 
 Каталог расположения исполняемого файла -DCMAKE_INSTALL_BINDIR=bin
 
-    По умолчанию большинство дистрибутивов bin
-    Для Ubuntu рекомендуется games
-    Для Gentoo рекомендуется games/bin
+  По умолчанию большинство дистрибутивов bin
+  Для Ubuntu рекомендуется games
+  Для Gentoo рекомендуется games/bin
 
 Выбор менеджера памяти -DMEMORY_ALLOCATOR=mimalloc
-
-    mimalloc (Значение по умолчанию)
-    standard
+    
+mimalloc (Значение по умолчанию)
+standard
 
 NOTE: За более подробной информацией обратитесь к документации вашего дистрибутива.
-3) Сборка пакета
+
+*Сборка пакета*
 
 NOTE: Выше был описан метод ручной установки но он имеет ряд недостатков главный из них это то что OpenXRay устанавливается в систему в обход пакетного менеджера что может привести к не приятным последствиям в будущем во избежании этого рекомендуется собрать пакет для вашего дистрибутива.
 
