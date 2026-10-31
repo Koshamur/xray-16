@@ -124,11 +124,11 @@ xr_3da xrAICore.so xrAPI.so xrCDB.so xrCore.so xrEngine.so xrGame.so xrLuabind.s
   Скопируйте каталог gamedata и файл fsgame.ltx из каталога xray-16/res в ~/S.T.A.L.K.E.R./
   В ~/S.T.A.L.K.E.R.CoP/ поместите игровые ресурсы levels, localization, mp, patches, resources. Должно получиться примерно так: S.T.A.L.K.E.R.CoP bin Для запуска откройте терминал перейдите в каталог ~/S.T.A.L.K.E.R. и выполните команду
 
-./bin/xr_3da -fsltx /home/Koshamur/S.T.A.L.K.E.R./fsgame.ltx
+`./bin/xr_3da -fsltx /home/Koshamur/S.T.A.L.K.E.R./fsgame.ltx`
 
 Аналогично можно поступить с ресурсами S.T.A.L.K.E.R.: Чистое Небо но для его запуска следует добавить ключ -cs
 
-./bin/xr_3da -cs -fsltx /home/Koshamur/S.T.A.L.K.E.R./fsgame.ltx
+`./bin/xr_3da -cs -fsltx /home/Koshamur/S.T.A.L.K.E.R./fsgame.ltx`
 
 NOTE: На данный момент путь к fsgame.ltx должен быть абсолютным начиная от корня системы
 
