@@ -115,13 +115,13 @@ cmake ..
 make
 `
     В домашней директории создайте каталог для игры например S.T.A.L.K.E.R.
-  Из каталога xray-16/bin/x64/Release/ скопируйте следующие файлы:
+  Из каталога `xray-16/bin/x64/Release/` скопируйте следующие файлы:
 
-xr_3da xrAICore.so xrAPI.so xrCDB.so xrCore.so xrEngine.so xrGame.so xrLuabind.so xrLuajit.so xrNetServer.so xrParticles.so xrRender_GL.so xrScriptEngine.so xrSound.so xrUICore.so
+`xr_3da xrAICore.so xrAPI.so xrCDB.so xrCore.so xrEngine.so xrGame.so xrLuabind.so xrLuajit.so xrNetServer.so xrParticles.so xrRender_GL.so xrScriptEngine.so xrSound.so xrUICore.so`
 
 в каталог ~/S.T.A.L.K.E.R./bin/ Все остальные файлы сим линки не являются необходимыми и и х можно не копировать.
 
-  Скопируйте каталог gamedata и файл fsgame.ltx из каталога xray-16/res в ~/S.T.A.L.K.E.R./
+  Скопируйте каталог gamedata и файл fsgame.ltx из каталога `xray-16/res в ~/S.T.A.L.K.E.R./`
   В ~/S.T.A.L.K.E.R.CoP/ поместите игровые ресурсы levels, localization, mp, patches, resources. Должно получиться примерно так: S.T.A.L.K.E.R.CoP bin Для запуска откройте терминал перейдите в каталог ~/S.T.A.L.K.E.R. и выполните команду
 
 `./bin/xr_3da -fsltx /home/Koshamur/S.T.A.L.K.E.R./fsgame.ltx`
@@ -135,7 +135,7 @@ NOTE: На данный момент путь к fsgame.ltx должен быт�
 NOTE: Для задействования всех ядер процессора во время компиляции их количество можно передать make через ключ -j, например make -j4 будет задействовано четыре ядра процессора.
 5) Игровые ресурсы
 
-Для запуска игры вам потребуются оригинальные ресурсы лицензионной копии S.T.A.L.K.E.R. Зов Припяти. и(или) S.T.A.L.K.E.R. - Чистое Небо. Поместите каталоги levels, localization, mp, patches, resources из дистрибутива S.T.A.L.K.E.R. Зов Припяти в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Call of Pripyat/ и(или) в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Clear Sky из дистрибутива S.T.A.L.K.E.R. - Чистое Небо.
+Для запуска игры вам потребуются оригинальные ресурсы лицензионной копии S.T.A.L.K.E.R. Зов Припяти. и(или) S.T.A.L.K.E.R. - Чистое Небо. Поместите каталоги `levels, localization, mp, patches, resources` из дистрибутива S.T.A.L.K.E.R. Зов Припяти в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Call of Pripyat/ и(или) в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Clear Sky из дистрибутива S.T.A.L.K.E.R. - Чистое Небо.
 
 !!!Внимание каталог ~/.../GSC Game World/S.T.A.L.K.E.R. -... необходимо создать самостоятельно
 
@@ -197,21 +197,21 @@ bash: xr_3da: команда не найдена
 
 возможно не правильно настроено расположение исполняемого файла на этапе настройки проекта, как правило значение по умолчанию переменной DCMAKE_INSTALL_BINDIR должно быть /usr/bin в ряде дистрибутивах она может отличатся. Если вы увидите сообщение вида:
 
-./xr_3da: error while loading shared libraries: xrEngine.so: cannot open shared object file: No such file or directory
+`./xr_3da: error while loading shared libraries: xrEngine.so: cannot open shared object file: No such file or directory`
 
 Возможно что на этапе настройки проекта неправильно определились одна из переменных (или обе сразу)
 
-DCMAKE_INSTALL_PREFIX должна быть равна /usr, а DCMAKE_INSTALL_LIBDIR – lib или lib64.
+`DCMAKE_INSTALL_PREFIX` должна быть равна `/usr`, а `DCMAKE_INSTALL_LIBDIR` – lib или lib64.
 
 Если если происходит инициализация после которой движок завершается аварийно с сообщением
-
+`
 FATAL ERROR
  
-[error] Expression    : setupSelectedRenderer
+`[error] Expression    : setupSelectedRenderer
 [error] Function      : InitializeRenderers
 [error] File          : /home/chip/OpenXray/xray-16/src/xrEngine/EngineAPI.cpp
 [error] Line          : 128
-[error] Description   : Can't setup renderer
+[error] Description   : Can't setup renderer`
 
 В случае портативной установки скорее всего вы не скопировали шейдеры из каталога xray-16/res/ скопируйте каталог xray-16/res/gamedata в каталог с ресурсами игры
 Известные баги и ошибки.
@@ -226,11 +226,11 @@ FATAL ERROR
 
 Подобный вылет в большинстве случаев сопровождается подобным сообщением в логе игры
 
-[error] Expression  : !m_error_code
+`[error] Expression  : !m_error_code
 [error] Function    : ~raii_guard
 [error] File        : /.../.../xray-16/src/xrSCRIPTENGINE/script_engine.cpp
 [error] Line        : 569
-[error] Description : ...R. -Call of Pripyat\gamedata\scripts\sound_theme.script:225: bad argument #1 to 'gsub' (string expected, got nil)
+[error] Description : ...R. -Call of Pripyat\gamedata\scripts\sound_theme.script:225: bad argument #1 to 'gsub' (string expected, got nil)`
 
 Данная проблема выявлена только на копиях игры из GOG. Для её решения Вам необходимо:
 
@@ -256,7 +256,7 @@ g_language pol
 g_language rus
 g_language spa
 
-Как переключить язык игры
+*Как переключить язык игры*
 
 Данная проблема выявлена только на копиях игры из GOG. Для её решения перейдите в каталог ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - ... В каталоге localization должны находится архивы с желаемой локализацией игры все остальные файлы и каталоги должны быть удалены. Ниже приведён список локализации для всех поддерживаемых языков.
 
@@ -278,7 +278,7 @@ g_language pol
 g_language rus
 g_language spa
 
-У меня низкий FPS
+*У меня низкий FPS*
 
 Ограничения некоторых расширенных настроек графики существенно увеличены, по сравнению с оригинальной игрой. Следует быть осторожным со следующими настройками графики:
 
@@ -287,41 +287,41 @@ g_language spa
     Плотность травы. Лимит данной опции был увеличен в два-три раза.
     Качество теневых карт. Этой опции также не было в оригинальном движке, значения были «зашиты» и единственным методом смены были ключи запуска, однако даже через ключ запуска максимальным значением было 4096, в то время как у нас максимум – 16384.
 
-Не могу собрать ошибка версии GCC
+*Не могу собрать ошибка версии GCC*
 
-  Некоторые пользователи сталкиваются с проблемой не совместимости версии GCC поскольку в ряде дистрибутивов по умолчанию предоставляется GCC версии 7, для сборки рекомендуется использовать GCC версии 8 и выше для решения этой проблем вы можете установить GCC 8 штатными средствами вашего дистрибутива и на этапе конфигурации выполнить cmake -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8 -DCMAKE_BUILD_TYPE=Debug -w ..
-    Не рекомендуется исправить в файле CMakeLists.txt но если в репозитории вашего дистрибутива нет GCC 8 то измените строку CMAKE_CXX_COMPILER_VERSION VERSION_LESS 8.0.0 на свой GCC к примеру CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.4.0. Однако возможны проблемы.
+  Некоторые пользователи сталкиваются с проблемой не совместимости версии GCC поскольку в ряде дистрибутивов по умолчанию предоставляется GCC версии 7, для сборки рекомендуется использовать GCC версии 8 и выше для решения этой проблем вы можете установить GCC 8 штатными средствами вашего дистрибутива и на этапе конфигурации выполнить `cmake -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8 -DCMAKE_BUILD_TYPE=Debug -w ..`
+    Не рекомендуется исправить в файле CMakeLists.txt но если в репозитории вашего дистрибутива нет GCC 8 то измените строку `CMAKE_CXX_COMPILER_VERSION VERSION_LESS 8.0.0` на свой GCC к примеру `CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.4.0`. Однако возможны проблемы.
 
-Звук плохо позиционируется
+*Звук плохо позиционируется*
 
-Нужно принудительно включить HRTF в OpenAL: echo "hrtf = true" >> ~/.alsoftrc
+Нужно принудительно включить HRTF в OpenAL: `echo "hrtf = true" >> ~/.alsoftrc`
 
-Если это не заработало, проверьте, что в системе присутствуют файлы default-44100.mhr и default-48000.mhr (В Ubuntu это пакет libopenal-data)
+Если это не заработало, проверьте, что в системе присутствуют файлы `default-44100.mhr и default-48000.mhr` (В Ubuntu это пакет `libopenal-data`)
 
-Если и после этого не заработало, запускайте игру с переменными ALSOFT_LOGLEVEL=3 ALSOFT_LOGFILE=/tmp/openallog.txt ./xr_3da и анализируйте лог на предмет HRTF.
+Если и после этого не заработало, запускайте игру с переменными `ALSOFT_LOGLEVEL=3 ALSOFT_LOGFILE=/tmp/openallog.txt ./xr_3da` и анализируйте лог на предмет HRTF.
 
-Не загружаются сохранения S.T.A.L.K.E.R.: Чистое Небо из оригинальной игры
+*Не загружаются сохранения S.T.A.L.K.E.R.: Чистое Небо из оригинальной игры*
 
 Обратной совместимости с форматом сохранения S.T.A.L.K.E.R.: Чистое Небо нет.
 
-Не запускается S.T.A.L.K.E.R.: Тень Чернобыля
+*Не запускается S.T.A.L.K.E.R.: Тень Чернобыля*
 
 Я установил движок и скопировал игровые ресурсы S.T.A.L.K.E.R.: Тень Чернобыля в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Shadow of Chernobyl/ но он у меня не запускается.
 
 На данный момент работы по поддержке S.T.A.L.K.E.R.: Тень Чернобыля только начаты.
 
-Игра запускается на английском языке как переключить язык на русский?
+*Игра запускается на английском языке как переключить язык на русский?*
 
 Данная проблема наблюдается для копии игры из GOG для её решения зайдите в .../S.T.A.L.K.E.R.../localization в ней должен находится только файлы base_sounds.db, xefis_movies.db, xrussian.db всё остальное нужно удалить
 
-Игра вылетает с установленным модом
+*Игра вылетает с установленным модом*
 
 К сожалению, совместимость с некоторыми модификациями неполная, это связанно со следующим:
 
   Многие разработчики при разработке модов вносят свои изменения в движок которых нет в OpenXRay такой мод полностью не совместим. Даже если разработчик мода использовал OpenXRay, не исключено что он внёс свои изменения в свою ветку.
     Разработчики модификаций часто используют разный регистр (Заглавные и строчные буквы) в путях и названиях файлов игровых ресурсов. Файловая система Linux устроена иначе: если в Windows файлы с именем A.dds и a.dds считаются одним и тем же файлом, то в Linux это разные файлы и в таком случае можно получить вылет связанный с отсутствием файла.
 
-Для того чтобы модификация могла запустится нужно выполнить несколько условий:
+*Для того чтобы модификация могла запустится нужно выполнить несколько условий:*
 
 1. Модификация не должна затрагивать сам движок
 2. Должны быть правильно прописаны пути и имена файлов в скриптах
