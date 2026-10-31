@@ -33,31 +33,31 @@ NOTE: Для задействования всех ядер процессора
 
 Дополнительные параметры которые можно указать при настройке передав их cmake:
 
--DCMAKE_BUILD_TYPE=Release
+`-DCMAKE_BUILD_TYPE=Release`
 
 Release - Релиз (значение по умолчанию, рекомендуется для игроков)  
 Debug - Отладка
 Mixed - Смешанная
 RelWithDebInfo - Релиз с отладочными символами
 
-Каталог установки -DCMAKE_INSTALL_PREFIX=/usr
+Каталог установки `-DCMAKE_INSTALL_PREFIX=/usr`
 
 NOTE: Обязательный параметр рекомендуемое значение для подавляющего числа дистрибутивов.
 
-Каталог расположения библиотек. -DCMAKE_INSTALL_LIBDIR=lib
+Каталог расположения библиотек. `-DCMAKE_INSTALL_LIBDIR=lib`
 
   lib Большинство дистрибутивов (Значение по умолчанию)
   lib64 Дистрибутивы с разделённой структурой каталогов (Fedora, CentOS, Slakware...)
 
 NOTE: Определяется автоматически, как правило INSTALL_PREFIX/lib
 
-Каталог расположения исполняемого файла -DCMAKE_INSTALL_BINDIR=bin
+Каталог расположения исполняемого файла `-DCMAKE_INSTALL_BINDIR=bin`
 
   По умолчанию большинство дистрибутивов bin
   Для Ubuntu рекомендуется games
   Для Gentoo рекомендуется games/bin
 
-Выбор менеджера памяти -DMEMORY_ALLOCATOR=mimalloc
+Выбор менеджера памяти `-DMEMORY_ALLOCATOR=mimalloc`
     
 mimalloc (Значение по умолчанию)
 standard
