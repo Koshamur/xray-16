@@ -21,13 +21,13 @@ git gcc cmake libglvnd libjpeg6-turbo ncurses glew sdl2 openal crypto++ freeimag
 NOTE: На текущий момент поддерживаются только компиляторы GCC8, GCC9, GCC10
 
 Для сборки и установки OpenXRay необходимо выполнить следующие команды в терминале
-`
-mkdir -p ~/xray-16/bin
+
+`mkdir -p ~/xray-16/bin
 cd ~/xray-16/bin
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 make
-sudo make install
-`
+sudo make install`
+
 
 NOTE: Для задействования всех ядер процессора во время компиляции их количество можно передать make через ключ -j, например make -j4 будет задействовано четыре ядра процессора.
 
@@ -35,10 +35,10 @@ NOTE: Для задействования всех ядер процессора
 
 -DCMAKE_BUILD_TYPE=Release
 
-    Release - Релиз (значение по умолчанию, рекомендуется для игроков)
-    Debug - Отладка
-    Mixed - Смешанная
-    RelWithDebInfo - Релиз с отладочными символами
+  Release - Релиз (значение по умолчанию, рекомендуется для игроков)
+  Debug - Отладка
+  Mixed - Смешанная
+  RelWithDebInfo - Релиз с отладочными символами
 
 Каталог установки -DCMAKE_INSTALL_PREFIX=/usr
 
@@ -78,12 +78,14 @@ makepkg`
 
 *Сборка пакета для Debian/Ubuntu*
 
-`sudo apt install git cmake make libglew-dev libopenal-dev libcrypto++-dev libogg-dev libtheora-dev libvorbis-dev libsdl2-dev liblzo2-dev libjpeg-dev libncurses5-dev gcc g++ dpkg-dev
+`
+sudo apt install git cmake make libglew-dev libopenal-dev libcrypto++-dev libogg-dev libtheora-dev libvorbis-dev libsdl2-dev liblzo2-dev libjpeg-dev libncurses5-dev gcc g++ dpkg-dev
 mkdir -p ~/xray-16/bin
 cd ~/xray-16/bin
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib -DCMAKE_INSTALL_BINDIR=/usr/games
 make
-make package`
+make package
+`
 
 NOTE: Для задействования всех ядер процессора во время компиляции их количество можно передать make через ключ -j, например make -j4 будет задействовано четыре ядра процессора.
 
@@ -91,12 +93,14 @@ NOTE: Для задействования всех ядер процессора
 
 *Сборка пакета для Fedora/CentOS*
 
-`sudo dnf install git cmake make gcc gcc-c++ glew-devel openal-devel cryptopp-devel libogg-devel libtheora-devel libvorbis-devel SDL2-devel lzo-devel libjpeg-turbo-devel
+`
+sudo dnf install git cmake make gcc gcc-c++ glew-devel openal-devel cryptopp-devel libogg-devel libtheora-devel libvorbis-devel SDL2-devel lzo-devel libjpeg-turbo-devel
 mkdir -p ~/xray-16/bin
 cd ~/xray-16/bin
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib64
 make
-make package`
+make package
+`
 
 NOTE: Для задействования всех ядер процессора во время компиляции их количество можно передать make через ключ -j, например make -j4 будет задействовано четыре ядра процессора.
 
@@ -105,19 +109,19 @@ NOTE: Для задействования всех ядер процессора
 4) Портативная (переносная) установка
 
 Если вы не имеете возможности создать пакет для своей системы и(или) не хотите устанавливать движок в свою систему то можете воспользоватся данным способом.
-
+`
 cmake ..
 make
-
+`
     В домашней директории создайте каталог для игры например S.T.A.L.K.E.R.
-    Из каталога xray-16/bin/x64/Release/ скопируйте следующие файлы:
+  Из каталога xray-16/bin/x64/Release/ скопируйте следующие файлы:
 
 xr_3da xrAICore.so xrAPI.so xrCDB.so xrCore.so xrEngine.so xrGame.so xrLuabind.so xrLuajit.so xrNetServer.so xrParticles.so xrRender_GL.so xrScriptEngine.so xrSound.so xrUICore.so
 
 в каталог ~/S.T.A.L.K.E.R./bin/ Все остальные файлы сим линки не являются необходимыми и и х можно не копировать.
 
-    Скопируйте каталог gamedata и файл fsgame.ltx из каталога xray-16/res в ~/S.T.A.L.K.E.R./
-    В ~/S.T.A.L.K.E.R.CoP/ поместите игровые ресурсы levels, localization, mp, patches, resources. Должно получиться примерно так: S.T.A.L.K.E.R.CoP bin Для запуска откройте терминал перейдите в каталог ~/S.T.A.L.K.E.R. и выполните команду
+  Скопируйте каталог gamedata и файл fsgame.ltx из каталога xray-16/res в ~/S.T.A.L.K.E.R./
+  В ~/S.T.A.L.K.E.R.CoP/ поместите игровые ресурсы levels, localization, mp, patches, resources. Должно получиться примерно так: S.T.A.L.K.E.R.CoP bin Для запуска откройте терминал перейдите в каталог ~/S.T.A.L.K.E.R. и выполните команду
 
 ./bin/xr_3da -fsltx /home/Koshamur/S.T.A.L.K.E.R./fsgame.ltx
 
@@ -130,13 +134,14 @@ NOTE: На данный момент путь к fsgame.ltx должен быт�
 NOTE: Для задействования всех ядер процессора во время компиляции их количество можно передать make через ключ -j, например make -j4 будет задействовано четыре ядра процессора.
 5) Игровые ресурсы
 
-    Для запуска игры вам потребуются оригинальные ресурсы лицензионной копии S.T.A.L.K.E.R. Зов Припяти. и(или) S.T.A.L.K.E.R. - Чистое Небо. Поместите каталоги levels, localization, mp, patches, resources из дистрибутива S.T.A.L.K.E.R. Зов Припяти в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Call of Pripyat/ и(или) в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Clear Sky из дистрибутива S.T.A.L.K.E.R. - Чистое Небо.
+Для запуска игры вам потребуются оригинальные ресурсы лицензионной копии S.T.A.L.K.E.R. Зов Припяти. и(или) S.T.A.L.K.E.R. - Чистое Небо. Поместите каталоги levels, localization, mp, patches, resources из дистрибутива S.T.A.L.K.E.R. Зов Припяти в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Call of Pripyat/ и(или) в ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - Clear Sky из дистрибутива S.T.A.L.K.E.R. - Чистое Небо.
 
 !!!Внимание каталог ~/.../GSC Game World/S.T.A.L.K.E.R. -... необходимо создать самостоятельно
 
-`mkdir -p ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ -\ Call\ of\ Pripyat`
-
-`mkdir -p ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ -\ Clear\ Sky`
+`
+mkdir -p ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ -\ Call\ of\ Pripyat
+mkdir -p ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ -\ Clear\ Sky
+`
 
 Если у вас есть цифровая копия игры в Steam то ресурсы можно скопировать из ~/.local/share/Steam/steamapps/common/Stalker... (Каталог установки игр Steam в Linux по умолчанию).
 
@@ -150,8 +155,8 @@ Fedora `sudo dnf install innoextract`
 
 Для распаковки дистрибутива выполните:
 
-    Скопируйте содержимое компакт диска в домашний каталог например ~/CoP
-    Откройте терминал перейдите в каталог с дистрибутивом игры cd ~/CoP и выполните innoextract setup.exe -L
+  Скопируйте содержимое компакт диска в домашний каталог например ~/CoP
+Откройте терминал перейдите в каталог с дистрибутивом игры cd ~/CoP и выполните innoextract setup.exe -L
 
 ключ -L переводит название всех файлов и каталогов в нижний регистр
 
@@ -159,7 +164,7 @@ Fedora `sudo dnf install innoextract`
 
 ключ --gog необходим для распаковки инсталятора gog
 
-    Дождитесь окончания распаковки, по завершению в каталоге ~/CoP появится каталог app или game из которого можно скопировать levels, localization, mp, patches, resources
+  Дождитесь окончания распаковки, по завершению в каталоге ~/CoP появится каталог app или game из которого можно скопировать levels, localization, mp, patches, resources
 
 Распакованный СD дистрибутив CD
 
@@ -167,21 +172,23 @@ Fedora `sudo dnf install innoextract`
 
 Внимание!!! имена каталогов levels, localization, mp, patches, resources и файлы в них должны находиться в нижнем регистре то есть маленькими буквами актуально для копии игры из GOG.
 
-    Если по каким либо причинам Вы не хотите занимать дополнительное место в домашнем каталоге но уже имеете установленную игру в Windows или Steam то можете создать символические ссылки на каталоги с ресурсами levels, localization, mp, patches, resources Ниже приведён пример создание символических ссылок S.T.A.L.K.E.R. Зов Припяти установленного в Steam:
+   Если по каким либо причинам Вы не хотите занимать дополнительное место в домашнем каталоге но уже имеете установленную игру в Windows или Steam то можете создать символические ссылки на каталоги с ресурсами levels, localization, mp, patches, resources Ниже приведён пример создание символических ссылок S.T.A.L.K.E.R. Зов Припяти установленного в Steam:
 
-`mkdir -p ~/.local/share/GSC Game World/S.T.A.L.K.E.R.\ -\ Call\ of\ Pripyat
+`
+mkdir -p ~/.local/share/GSC Game World/S.T.A.L.K.E.R.\ -\ Call\ of\ Pripyat
 ln -s ~/.local/share/Steam/steamapps/common/Stalker\ Call\ of\ Pripyat/levels ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ - Call\ of\ Pripyat/levels
 ln -s ~/.local/share/Steam/steamapps/common/Stalker\ Call\ of\ Pripyat/localization ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ - Call\ of\ Pripyat/localization
 ln -s ~/.local/share/Steam/steamapps/common/Stalker\ Call\ of\ Pripyat/mp ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ -\ Call\ of\ Pripyat/mp
 ln -s ~/.local/share/Steam/steamapps/common/Stalker\ Call\ of\ Pripyat/patches ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ - Call\ of\ Pripyat/patches
-ln -s ~/.local/share/Steam/steamapps/common/Stalker\ Call\ of\ Pripyat/resources ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ - Call\ of\ Pripyat/resources`
+ln -s ~/.local/share/Steam/steamapps/common/Stalker\ Call\ of\ Pripyat/resources ~/.local/share/GSC\ Game\ World/S.T.A.L.K.E.R.\ - Call\ of\ Pripyat/resources
+`
 
-    Теперь игру можно запустить выбрав пункт S.T.A.L.K.E.R.: Call of Pripyat (OpenXRay) или S.T.A.L.K.E.R.: - Clear Sky (OpenXRay) из меню приложений или выполнив в терминале xr_3da для запуска S.T.A.L.K.E.R. Зов Припяти или xr_3da -cs для запуска S.T.A.L.K.E.R. - Чистое Небо
+  Теперь игру можно запустить выбрав пункт S.T.A.L.K.E.R.: Call of Pripyat (OpenXRay) или S.T.A.L.K.E.R.: - Clear Sky (OpenXRay) из меню приложений или выполнив в терминале xr_3da для запуска S.T.A.L.K.E.R. Зов Припяти или xr_3da -cs для запуска S.T.A.L.K.E.R. - Чистое Небо
 
 Внимание!!! работы по поддержке S.T.A.L.K.E.R. - Чистое Небо не завершены. Возможны баги и ошибки.
 Возможные проблемы
 
-    Установленный движок не запускается.
+  *Установленный движок не запускается.*
 
 Откройте терминал и введите команду xr_3da если будет выдано сообщение вида:
 
@@ -208,7 +215,7 @@ FATAL ERROR
 В случае портативной установки скорее всего вы не скопировали шейдеры из каталога xray-16/res/ скопируйте каталог xray-16/res/gamedata в каталог с ресурсами игры
 Известные баги и ошибки.
 
-    При выходе из игры процесс может зависнуть (по состоянию на май 2020 данная проблема наблюдается при сборке с использованием gcc9 )
+  При выходе из игры процесс может зависнуть (по состоянию на май 2020 данная проблема наблюдается при сборке с использованием gcc9 )
     Сохранения и логи не поддерживают UTF-8
     На видеокартах AMD замечены баги с включенным SSAO, поэтому рекомендуется его полностью отключить.
     Не создаются превью для сохранения
@@ -226,7 +233,7 @@ FATAL ERROR
 
 Данная проблема выявлена только на копиях игры из GOG. Для её решения Вам необходимо:
 
-    Перейти в каталог с ресурсами по умолчанию это ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - ...
+  Перейти в каталог с ресурсами по умолчанию это ~/.local/share/GSC Game World/S.T.A.L.K.E.R. - ...
     Убедится в том что имя каталога каталог localization находится в нижнем регистре (То есть маленькими буквами). Правильное имя каталога localization Не правильное имя каталога Localization
     В каталоге localization должны находится архивы с желаемой локализацией игры все остальные файлы и каталоги должны быть удалены. Ниже приведён список локализации для всех поддерживаемых языков.
 
@@ -274,14 +281,14 @@ g_language spa
 
 Ограничения некоторых расширенных настроек графики существенно увеличены, по сравнению с оригинальной игрой. Следует быть осторожным со следующими настройками графики:
 
-    Детализация объектов. Данная опция оказывает значительное влияние на производительность.
+  Детализация объектов. Данная опция оказывает значительное влияние на производительность.
     Дальность прорисовки травы. Данной опции просто не было в оригинальном движке и её значение было «зашито» прямо в движке.
     Плотность травы. Лимит данной опции был увеличен в два-три раза.
     Качество теневых карт. Этой опции также не было в оригинальном движке, значения были «зашиты» и единственным методом смены были ключи запуска, однако даже через ключ запуска максимальным значением было 4096, в то время как у нас максимум – 16384.
 
 Не могу собрать ошибка версии GCC
 
-    Некоторые пользователи сталкиваются с проблемой не совместимости версии GCC поскольку в ряде дистрибутивов по умолчанию предоставляется GCC версии 7, для сборки рекомендуется использовать GCC версии 8 и выше для решения этой проблем вы можете установить GCC 8 штатными средствами вашего дистрибутива и на этапе конфигурации выполнить cmake -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8 -DCMAKE_BUILD_TYPE=Debug -w ..
+  Некоторые пользователи сталкиваются с проблемой не совместимости версии GCC поскольку в ряде дистрибутивов по умолчанию предоставляется GCC версии 7, для сборки рекомендуется использовать GCC версии 8 и выше для решения этой проблем вы можете установить GCC 8 штатными средствами вашего дистрибутива и на этапе конфигурации выполнить cmake -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8 -DCMAKE_BUILD_TYPE=Debug -w ..
     Не рекомендуется исправить в файле CMakeLists.txt но если в репозитории вашего дистрибутива нет GCC 8 то измените строку CMAKE_CXX_COMPILER_VERSION VERSION_LESS 8.0.0 на свой GCC к примеру CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.4.0. Однако возможны проблемы.
 
 Звук плохо позиционируется
@@ -310,11 +317,11 @@ g_language spa
 
 К сожалению, совместимость с некоторыми модификациями неполная, это связанно со следующим:
 
-    Многие разработчики при разработке модов вносят свои изменения в движок которых нет в OpenXRay такой мод полностью не совместим. Даже если разработчик мода использовал OpenXRay, не исключено что он внёс свои изменения в свою ветку.
+  Многие разработчики при разработке модов вносят свои изменения в движок которых нет в OpenXRay такой мод полностью не совместим. Даже если разработчик мода использовал OpenXRay, не исключено что он внёс свои изменения в свою ветку.
     Разработчики модификаций часто используют разный регистр (Заглавные и строчные буквы) в путях и названиях файлов игровых ресурсов. Файловая система Linux устроена иначе: если в Windows файлы с именем A.dds и a.dds считаются одним и тем же файлом, то в Linux это разные файлы и в таком случае можно получить вылет связанный с отсутствием файла.
 
 Для того чтобы модификация могла запустится нужно выполнить несколько условий:
 
-    Модификация не должна затрагивать сам движок
-    Должны быть правильно прописаны пути и имена файлов в скриптах
+1. Модификация не должна затрагивать сам движок
+2. Должны быть правильно прописаны пути и имена файлов в скриптах
 
